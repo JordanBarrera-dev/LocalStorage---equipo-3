@@ -49,3 +49,6 @@ button {
     border-radius: 5px;
     font-size: 12px;
 }
+#favorite-ones:disabled { 
+    background-color: #ddddddd4;
+ }
