@@ -3,6 +3,7 @@ var pokemonActual = null;
 
 // Buscar Pokémon
 function searchPokemon(){
+    document.getElementById("favorite-ones").disabled = false;
     var nombre =
         document.getElementById("pokemonInput")
         .value
@@ -79,3 +80,44 @@ function searchPokemon(){
         "</div>" +
         "</div>";
 }
+function saveFavorite(pokemonInfo) {
+    let list_favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    let favoritesSet = new Set(list_favorites);
+    favoritesSet.add(pokemonInfo);
+    localStorage.setItem("favorites", JSON.stringify([...favoritesSet]));
+    favoritesList()
+}
+document.getElementById("favorite-ones").addEventListener("click", () => { if (pokemonActual) { saveFavorite(pokemonActual);
+    document.getElementById("favorite-ones").disabled = true;
+ } });
+
+function favoritesList(){
+    let list_favorites = JSON.parse(localStorage.getItem("favorites"));
+    const favorito = document.getElementById("favoritos")
+    let divCard = document.createElement("div")
+    for (pokemonActual in list_favorites){
+    divCard.className = "tarjetas"
+    console.log(pokemonActual)
+    divCard.innerHTML = `<div class='card'>
+        <h3>
+        ${list_favorites[pokemonActual].nombre}
+        </h3>
+        <img src='
+        ${list_favorites[pokemonActual].imagen}
+        '></div>`
+        favorito.appendChild(divCard)
+    }
+
+
+}
+document.addEventListener("DOMContentLoaded", () =>{
+favoritesList()
+
+})
+
+function eliminar(){
+    localStorage.removeItem("favorites")
+    const favorito = document.getElementById("favoritos")
+    favorito.innerHTML = "";
+}
+

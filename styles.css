@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffcc00;
+    text-align: center;
+}
+/* Contenedor */
+.container {
+    background-color: white;
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Título */
+h1 {
+    color: red;
+}
+/* Input */
+input {
+    padding: 8px;
+    width: 80%;
+    margin: 10px 0;
+}
+/* Botones */
+button {
+    padding: 8px 12px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+/* Tarjeta del Pokémon */
+.card {
+    background-color: #f2f2f2;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+/* Imagen */
+.card img {
+    width: 100px;
+}
+/* Stats */
+.stats {
+    background-color: #ddd;
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+}
